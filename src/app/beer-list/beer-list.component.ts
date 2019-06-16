@@ -8,13 +8,18 @@ import { BeerService } from '../services/beer.service';
 })
 export class BeerListComponent implements OnInit {
   lista:any ;
+  error: boolean;
 
   constructor(private beerService: BeerService) { }
 
   ngOnInit() {
-    this.beerService.getAllBeers().then( datos => {
+    this.beerService.getAllBeers()
+    .then( datos => {
       this.lista = datos;
     })
+    .catch(error => {
+      this.error = true;
+    });
   }
 
 }
