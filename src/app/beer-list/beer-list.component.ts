@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BeerService } from '../services/beer.service';
 
 @Component({
   selector: 'app-beer-list',
@@ -6,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./beer-list.component.scss']
 })
 export class BeerListComponent implements OnInit {
-  lista =  ['Judas', 'Alhambra', 'Cervezas Paco'];
+  lista:any ;
 
-  constructor() { }
+  constructor(private beerService: BeerService) { }
 
   ngOnInit() {
+    this.beerService.getAllBeers().then( datos => {
+      this.lista = datos;
+    })
   }
 
 }

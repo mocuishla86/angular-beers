@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BeerListComponent } from './beer-list/beer-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [  //Componentes del módulo
@@ -12,7 +13,8 @@ import { BeerListComponent } from './beer-list/beer-list.component';
   ],
   imports: [ //Dependencias, otros módulos que me importo
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [], //Los servicios
   bootstrap: [AppComponent] //Sólo para el módulo principal. Es el componente raíz.

@@ -2,7 +2,11 @@
   Esta es la lista de cervezas:
 </p>
 <ul>
-    <li *ngFor="let cerveza of lista">{{cerveza}}</li>
+    <li *ngFor="let cerveza of lista">
+      <h3>{{cerveza.name}}</h3>
+      <br>
+      <img src="{{cerveza.image_url}}" alt="Image of {{cerveza.name}}"/>
+    </li>
   </ul>
 
 
