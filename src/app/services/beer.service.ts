@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BeerService {
   getAllBeers() {
-    return this.httpClient.get('https://api.punkapi.com/v2/beersa').toPromise();
+    return this.httpClient.get('https://api.punkapi.com/v2/beers').toPromise();
   }
 
   constructor(private httpClient: HttpClient) { }
